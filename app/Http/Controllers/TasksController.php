@@ -10,7 +10,7 @@ class TasksController extends Controller
 {
     public function index()
     {
-    	return 'index';
+    	return view('tasks.index');
     }
 
     public function store()
