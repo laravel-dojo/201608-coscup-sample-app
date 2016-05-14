@@ -23,6 +23,8 @@
 				<!-- 建立新 Task 表單 -->
 				<form action="" method="POST" class="form-horizontal">
 
+					{{ csrf_field() }}
+
 					<!-- Task 名稱 -->
 					<div class="form-group">
 						<label for="task-name" class="col-sm-3 control-label">Task</label>
@@ -67,12 +69,20 @@
 							<td>
 								<!-- 完成 Task 按鈕 -->
 								<form action="" method="POST" class="form-inline">
+									
+									{{ csrf_field() }}
+									{{ method_field('PATCH') }}
+									
 									<button type="submit" class="btn btn-success">
 										<i class="fa fa-check"></i>完成
 									</button>
 								</form>
 								<!-- 刪除 Task 按鈕 -->
 								<form action="" method="POST" class="form-inline">
+									
+									{{ csrf_field() }}
+									{{ method_field('DELETE') }}
+									
 									<button type="submit" class="btn btn-danger">
 										<i class="fa fa-trash"></i>刪除
 									</button>
