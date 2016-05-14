@@ -8,11 +8,11 @@
 	<title>COSCUP 2016 Laravel 部署工作坊 - todo 範例程式</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet" type="text/css">
-	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/jquery-2.2.3.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 	<style>
 		body {
