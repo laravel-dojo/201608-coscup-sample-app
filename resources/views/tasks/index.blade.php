@@ -64,11 +64,12 @@
 						@foreach($tasks as $task)
 						<tr>
 							<td class="table-text">
-								<div class="">{{ $task->name }}</div>
+								<div class="{{ ($task->done)? 'check' : '' }}">{{ $task->name }}</div>
 							</td>
 							<td>
+								@if (! $task->done)
 								<!-- 完成 Task 按鈕 -->
-								<form action="{{ url('tasks/1') }}" method="POST" class="form-inline">
+								<form action="{{ url('tasks/'.$task->id) }}" method="POST" class="form-inline">
 									
 									{{ csrf_field() }}
 									{{ method_field('PATCH') }}
@@ -77,8 +78,10 @@
 										<i class="fa fa-check"></i>完成
 									</button>
 								</form>
+								@endif
+								
 								<!-- 刪除 Task 按鈕 -->
-								<form action="{{ url('tasks/1') }}" method="POST" class="form-inline">
+								<form action="{{ url('tasks/'.$task->id) }}" method="POST" class="form-inline">
 									
 									{{ csrf_field() }}
 									{{ method_field('DELETE') }}
