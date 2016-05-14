@@ -9,16 +9,18 @@
 			</div>
 
 			<div class="panel-body">
+				@if ($errors->any())
 				<!-- 錯誤訊息顯示區塊 -->
 				<div class="alert alert-danger">
 					<strong>請檢查您輸入的資料！</strong>
 					<br><br>
 					<ul>
-						<li>錯誤訊息 1</li>
-						<li>錯誤訊息 2</li>
-						<li>錯誤訊息 3</li>
+						@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+						@endforeach
 					</ul>
 				</div>
+				@endif
 
 				<!-- 建立新 Task 表單 -->
 				<form action="{{ url('tasks') }}" method="POST" class="form-horizontal">
