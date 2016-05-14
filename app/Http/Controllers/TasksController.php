@@ -19,8 +19,10 @@ class TasksController extends Controller
         return view('tasks.index', $data);
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        Task::create($request->all());
+        
     	return redirect('/');
     }
 
