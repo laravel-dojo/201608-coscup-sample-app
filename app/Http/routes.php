@@ -11,12 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return 'welcome';
-    //return view('welcome');
-    //return redirect('test');
+Route::get('/', function() {
+	return 'index';
 });
 
-Route::get('hello/{name}', function($name) {
-   return 'hello, '.$name;
+Route::post('tasks', function() {
+	return redirect('/');
+});
+
+Route::patch('tasks/{task}', function($task) {
+	return redirect('/');
+});
+
+Route::delete('tasks/{task}', function($task) {
+	return redirect('/');
 });
