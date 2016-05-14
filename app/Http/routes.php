@@ -11,18 +11,7 @@
 |
 */
 
-Route::get('/', function() {
-	return 'index';
-});
-
-Route::post('tasks', function() {
-	return redirect('/');
-});
-
-Route::patch('tasks/{task}', function($task) {
-	return redirect('/');
-});
-
-Route::delete('tasks/{task}', function($task) {
-	return redirect('/');
-});
+Route::get('/', 'TasksController@index');
+Route::post('tasks', 'TasksController@store');
+Route::patch('tasks/{task}', 'TasksController@update');
+Route::delete('tasks/{task}', 'TasksController@destroy');
