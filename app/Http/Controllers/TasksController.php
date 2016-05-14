@@ -10,7 +10,16 @@ class TasksController extends Controller
 {
     public function index()
     {
-    	return view('tasks.index');
+        $tasks = [];
+        
+        for($i = 0; $i < 10; $i++) {
+            $task = new \stdClass();
+            $task->name = 'task '.($i+1);
+            $tasks[] = $task;
+        }
+
+        $data = ['tasks' => $tasks];
+        return view('tasks.index', $data);
     }
 
     public function store()
