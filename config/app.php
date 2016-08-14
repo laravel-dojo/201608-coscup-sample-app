@@ -148,6 +148,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Recca0120\LaravelTracy\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
